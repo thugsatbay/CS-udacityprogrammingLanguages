@@ -7,10 +7,11 @@
 chart = {}
 
 def memofibo(n):
-    if n==1:
-        return 1
-    elif n==0:
-        return 0
+    if n<=2:
+        chart[n]=1
+        return chart[n]
+    elif n in chart:
+        return chart[n]
     else:
         chart[n]=memofibo(n-1)+memofibo(n-2)
         return chart[n]
